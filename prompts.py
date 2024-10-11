@@ -1068,7 +1068,7 @@ prompts_dict = {
     "translate_expert": Prompt("translate_expert", prompt_translate_expert, True),
     "word_card": Prompt("word_card", prompt_word_card, True),
     "deep_thinker": Prompt("deep_thinker", prompt_deep_thinker, True),
-    "red_blue_pill": Prompt("red_blue_pills", prompt_red_blue_pill, True),
+    "red_blue_pill": Prompt("red_blue_pill", prompt_red_blue_pill, True),
 }
 
 
