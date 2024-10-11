@@ -173,7 +173,7 @@ class ChinesePua(Plugin):
             if match:
                 keyword = match.group(2).strip()
                 logger.debug(f"[chinesepua] 红蓝药丸: {keyword}")
-                prompt = get_prompt("red_blue_pills")
+                prompt = get_prompt("red_blue_pill")
         
         if (
             prompt
