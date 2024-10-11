@@ -71,7 +71,9 @@ ChinesePUA 是一个为 chatgpt-on-wechat 设计的插件,灵感来源于李继�
 
 ## 追加插件
 如果看到李继刚老师有新的插件想要接入，更新`prompts.py`、`chinesepua.py`两个文件
+
 prompt要在最后追加`;; 只需要输出 svg 代码，不要任何解释，也不需要用代码块包裹。从这个开头 <svg width="400" height="600" xmlns="http://www.w3.org/2000/svg">`
+
 缺少这一句会报`生成失败，请检查模型输出结果`异常
 
 
