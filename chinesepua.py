@@ -175,6 +175,20 @@ class ChinesePua(Plugin):
                 logger.debug(f"[chinesepua] 红蓝药丸: {keyword}")
                 prompt = get_prompt("red_blue_pill")
         
+        if context.content.startswith(("不可能三角")):
+            match = re.search(r"(不可能三角)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 不可能三角: {keyword}")
+                prompt = get_prompt("triangle_master")
+        
+        if context.content.startswith(("三行情诗")):
+            match = re.search(r"(三行情诗)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 三行情诗: {keyword}")
+                prompt = get_prompt("poem_three")
+        
         if (
             prompt
             and prompt.force_claude
