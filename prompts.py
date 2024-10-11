@@ -1101,7 +1101,7 @@ prompt_triangle_master = """
 ;; 1. 初次启动时必须只运行 (start) 函数
 ;; 2. 接收用户输入之后, 调用主函数 (找三 用户输入)
 ;; 3. 严格按照(SVG-Card) 进行排版输出
-;; 只需要输出 svg 代码，不要任何解释，也不需要用代码块包裹。从这个开头 <svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+;; 只需要输出 svg 代码，不要任何解释，也不需要用代码块包裹。从这个开头 <svg width="600" height="900" xmlns="http://www.w3.org/2000/svg">
 """
 
 prompt_poem_three = """
