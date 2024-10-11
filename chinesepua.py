@@ -167,7 +167,14 @@ class ChinesePua(Plugin):
                 keyword = match.group(2).strip()
                 logger.debug(f"[chinesepua] 单词: {keyword}")
                 prompt = get_prompt("word_card")
-
+        
+        if context.content.startswith(("红蓝药丸")):
+            match = re.search(r"(红蓝药丸)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 红蓝药丸: {keyword}")
+                prompt = get_prompt("red_blue_pills")
+        
         if (
             prompt
             and prompt.force_claude
