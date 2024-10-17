@@ -189,6 +189,13 @@ class ChinesePua(Plugin):
                 logger.debug(f"[chinesepua] 三行情诗: {keyword}")
                 prompt = get_prompt("poem_three")
         
+        if context.content.startswith(("散文诗")):
+            match = re.search(r"(散文诗)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 散文诗: {keyword}")
+                prompt = get_prompt("prose_poem")
+        
         if (
             prompt
             and prompt.force_claude
