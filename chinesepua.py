@@ -195,7 +195,15 @@ class ChinesePua(Plugin):
                 keyword = match.group(2).strip()
                 logger.debug(f"[chinesepua] 散文诗: {keyword}")
                 prompt = get_prompt("prose_poem")
+
+        if context.content.startswith(("我很礼貌")):
+            match = re.search(r"(我很礼貌)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 我很礼貌: {keyword}")
+                prompt = get_prompt("polite")
         
+
         if (
             prompt
             and prompt.force_claude
