@@ -202,6 +202,13 @@ class ChinesePua(Plugin):
                 keyword = match.group(2).strip()
                 logger.debug(f"[chinesepua] 我很礼貌: {keyword}")
                 prompt = get_prompt("polite")
+
+        if context.content.startswith(("文案大师")):
+            match = re.search(r"(文案大师)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 文案大师: {keyword}")
+                prompt = get_prompt("apple_words_master")
         
 
         if (
