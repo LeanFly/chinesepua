@@ -209,6 +209,20 @@ class ChinesePua(Plugin):
                 keyword = match.group(2).strip()
                 logger.debug(f"[chinesepua] 文案大师: {keyword}")
                 prompt = get_prompt("apple_words_master")
+
+        if context.content.startswith(("人间苦")):
+            match = re.search(r"(人间苦)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 人间苦: {keyword}")
+                prompt = get_prompt("life_hard")
+
+        if context.content.startswith(("一瞬", "微小说")):
+            match = re.search(r"(一瞬|微小说)(.+)", context.content)
+            if match:
+                keyword = match.group(2).strip()
+                logger.debug(f"[chinesepua] 一瞬: {keyword}")
+                prompt = get_prompt("mini_novel")
         
 
         if (
